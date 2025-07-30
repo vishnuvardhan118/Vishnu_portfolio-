@@ -1,206 +1,266 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificates</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            min-height: 100vh;
-            font-family: sans-serif;
-            background: url('main.jpeg') no-repeat center center/cover;
-            color: white;
-        }
-         display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+    html, body {
+  overflow-x: hidden;
 }
-.container {
-  padding: 0 20px 40px;
-  box-sizing: border-box;
+.content-container {
+  gap: 50px;
+}
+@media (max-width: 768px) {
+  .content-container {
+    gap: 30px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .new-image {
+    transform: none;
+    margin-bottom: 20px;
+  }
+}
 
-        .containers {
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-        }
 
-        header {
-            width: 100%;
-        }
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      background: url('main.jpeg') no-repeat center center/cover;
+      color: white;
+    }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
+    .containers {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-bottom: 60px;
+    }
 
-        .logo-port {
-            font-size: 36px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-        }
+    header {
+      width: 100%;
+    }
 
-        .navlinks {
-            display: flex;
-            gap: 30px;
-        }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 
-        .nav-headings, .dropbtn {
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
+    .logo-port {
+      font-size: 36px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
 
-        .dropbtn::after {
-            content: " ▼";
-        }
+    .navlinks {
+      display: flex;
+      gap: 30px;
+    }
 
-        .dropdown {
-            position: relative;
-        }
+    .nav-headings, .dropbtn {
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.8);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-            text-align: left;
-        }
+    .dropbtn::after {
+      content: " ▼";
+    }
 
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
+    .dropdown {
+      position: relative;
+    }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.8);
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      text-align: left;
+    }
 
-        .head {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 40px 0;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
 
-        .head:hover {
-            transform: scale(1.05);
-        }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
 
-        .head h1 {
-            font-size: 3rem;
-            color: #0c0c0c;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-        }
+    .content-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 100px 20px 50px; /* Increased top padding to push content down */
+  gap: 300px;
+}
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            justify-content: center;
-            align-items: center;
-            max-width: 900px;
-            margin: 0 auto;
-            padding-bottom: 40px;
-        }
 
-        .certificate-box {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-        }
+    .content {
+      max-width: 600px;
+    }
 
-        .certificate-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            background: rgba(255, 255, 255, 0.2);
-        }
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: #ffba08;
+    }
 
-        .certificate-box img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
-        }
+    h3 {
+      font-size: 18px;
+      line-height: 1.6;
+    }
 
-        .certificate-box:hover img {
-            transform: scale(1.1);
-        }
+    .new-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translateX(-100px); /* move image left toward text */
+}
 
-        .certificate-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #ffba08;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-            transition: color 0.3s ease;
-        }
 
-        .certificate-box:hover .certificate-title {
-            color: #ffdd57;
-        }
-    </style>
+    .new-image img {
+      width: 100%;
+      height: 100%;
+      object-fit:cover;
+    }
+    
+    @media (max-width: 768px) {
+  .content {
+    order: 2;
+  }
+  .new-image {
+    order: 1;
+  }
+}
+
+
+
+    .cvbtn {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cvbtn button {
+      font-size: 18px;
+      font-weight: bold;
+      color: #e0e0e0;
+      padding: 12px 24px;
+      border: none;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cvbtn button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .cvbtn a {
+      color: #e0e0e0;
+      text-decoration: none;
+    }
+    .typing-container {
+  width: fit-content;
+  margin-left: 10px;  /* Moves it 40px from the left side */
+  margin-top: 20px;   /* Keeps top margin */
+  font-family: 'Poppins', sans-serif;
+}
+
+.typing-text {
+  font-size: 2.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 1px solid #3498db;
+  width: 0;
+  animation: typing 1.8s steps(20) forwards, blink 0.7s step-end infinite;
+}
+
+.cursor {
+  animation: blinkCursor 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 18ch; } /* Adjust character count to match your name */
+}
+
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+
+  </style>
 </head>
 <body>
-    <div class="containers">
-        <header>
-            <nav>
-                <a href="index.html" class="logo-port">Portfolio</a>
-                <div class="navlinks">
-                    <a href="index.html" class="nav-headings">Home</a>
-                    <a href="skill.html" class="nav-headings">About</a>
-                    <a href="certi.html" class="nav-headings">My Certificates</a>
-                    <div class="dropdown">
-                        <button class="dropbtn">Contact</button>
-                        <div class="dropdown-content">
-                            <a href="https://github.com/vishnuvardhan118">Github</a>
-                            <a href="https://www.linkedin.com/in/vishnu-vardhan-693148290/">LinkedIn</a>
-                            <a href="mailto:vishnu118k@gmail.com">Gmail</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <div class="head">
-            <h1>Certificates</h1>
-        </div>
-
-        <div class="container">
-            <div class="certificate-box">
-                <img src="python.jpeg" alt="Python Certificate">
-                <div class="certificate-title">Python Development</div>
+  <div class="containers">
+    <header>
+      <nav>
+        <a href="#" class="logo-port">Portfolio</a>
+        <div class="navlinks">
+          <a href="#" class="nav-headings">Home</a>
+          <a href="skill.html" class="nav-headings">About</a>
+          <a href="certi.html" class="nav-headings">My Certificates</a>
+          <div class="dropdown">
+            <button class="dropbtn">Contact</button>
+            <div class="dropdown-content">
+              <a href="https://github.com/vishnuvardhan118">Github</a>
+              <a href="https://www.linkedin.com/in/vishnu-vardhan-693148290/">LinkedIn</a>
+              <a href="mailto:vishnu118k@gmail.com">Gmail</a>
             </div>
-            <div class="certificate-box">
-                <img src="web.jpeg" alt="Web Development Certificate">
-                <div class="certificate-title">Web Development</div>
-            </div>
+          </div>
         </div>
+      </nav>
+    </header>
+
+    <div class="content-container">
+      <div class="content">
+        <div class="typing-container">
+            <h1 class="typing-text">I'm Vishnu Vardhan<span class="cursor">.....</span></h1>
+        </div>
+        <h3>
+          As a passionate and dedicated student, I am constantly striving to expand my knowledge
+          and tackle new challenges. My curiosity drives me to excel in academics, creative projects,
+          and extracurricular activities. I am eager to bring my unique perspective and enthusiasm 
+          for learning to new opportunities.
+        </h3>
+      </div>
+      <div class="new-image">
+        <img src="bestone.jpeg" alt="Vishnu's photo">
+      </div>
     </div>
+
+    <div class="cvbtn">
+      <button>
+        <a href="Vishnu_resume.pdf" download>Download Resume</a>
+      </button>
+    </div>
+  </div>
 </body>
 </html>
