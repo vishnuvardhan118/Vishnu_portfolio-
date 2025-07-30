@@ -11,17 +11,25 @@
       box-sizing: border-box;
       font-family: sans-serif;
     }
-    .container {
-  padding: 0 20px 40px;
-  box-sizing: border-box;
+    html, body {
+  overflow-x: hidden;
 }
-        .containers {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+.content-container {
+  gap: 50px;
 }
+@media (max-width: 768px) {
+  .content-container {
+    gap: 30px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .new-image {
+    transform: none;
+    margin-bottom: 20px;
+  }
+}
+
 
     html, body {
       width: 100%;
