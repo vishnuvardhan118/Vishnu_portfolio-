@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      background: url('main.jpeg') no-repeat center center/cover;
+      color: white;
+    }
+
+    .containers {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-bottom: 60px;
+    }
+
+    header {
+      width: 100%;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .logo-port {
+      font-size: 36px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-headings, .dropbtn {
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .dropbtn::after {
+      content: " ▼";
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.8);
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      text-align: left;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .content-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 100px 20px 50px; /* Increased top padding to push content down */
+  gap: 300px;
+}
+
+
+    .content {
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: #ffba08;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .new-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translateX(-100px); /* move image left toward text */
+}
+
+
+    .new-image img {
+      width: 100%;
+      height: 100%;
+      object-fit:cover;
+    }
+    
+    @media (max-width: 768px) {
+  .content {
+    order: 2;
+  }
+  .new-image {
+    order: 1;
+  }
+}
+
+
+
+    .cvbtn {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cvbtn button {
+      font-size: 18px;
+      font-weight: bold;
+      color: #e0e0e0;
+      padding: 12px 24px;
+      border: none;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cvbtn button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .cvbtn a {
+      color: #e0e0e0;
+      text-decoration: none;
+    }
+    .typing-container {
+  width: fit-content;
+  margin-left: 10px;  /* Moves it 40px from the left side */
+  margin-top: 20px;   /* Keeps top margin */
+  font-family: 'Poppins', sans-serif;
+}
+
+.typing-text {
+  font-size: 2.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 1px solid #3498db;
+  width: 0;
+  animation: typing 1.8s steps(20) forwards, blink 0.7s step-end infinite;
+}
+
+.cursor {
+  animation: blinkCursor 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 18ch; } /* Adjust character count to match your name */
+}
+
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+
+  </style>
+</head>
+<body>
+  <div class="containers">
+    <header>
+      <nav>
+        <a href="#" class="logo-port">Portfolio</a>
+        <div class="navlinks">
+          <a href="#" class="nav-headings">Home</a>
+          <a href="skill.html" class="nav-headings">About</a>
+          <a href="certi.html" class="nav-headings">My Certificates</a>
+          <div class="dropdown">
+            <button class="dropbtn">Contact</button>
+            <div class="dropdown-content">
+              <a href="https://github.com/vishnuvardhan118">Github</a>
+              <a href="https://www.linkedin.com/in/vishnu-vardhan-693148290/">LinkedIn</a>
+              <a href="mailto:vishnu118k@gmail.com">Gmail</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="content-container">
+      <div class="content">
+        <div class="typing-container">
+            <h1 class="typing-text">I'm Vishnu Vardhan<span class="cursor">.....</span></h1>
+        </div>
+        <h3>
+          As a passionate and dedicated student, I am constantly striving to expand my knowledge
+          and tackle new challenges. My curiosity drives me to excel in academics, creative projects,
+          and extracurricular activities. I am eager to bring my unique perspective and enthusiasm 
+          for learning to new opportunities.
+        </h3>
+      </div>
+      <div class="new-image">
+        <img src="bestone.jpeg" alt="Vishnu's photo">
+      </div>
+    </div>
+
+    <div class="cvbtn">
+      <button>
+        <a href="Vishnu_resume.pdf" download>Download Resume</a>
+      </button>
+    </div>
+  </div>
+</body>
+</html>

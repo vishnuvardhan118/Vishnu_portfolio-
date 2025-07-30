@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            font-family: sans-serif;
+            background: url('main.jpeg') no-repeat center center/cover;
+            color: white;
+        }
+
+        .containers {
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+        }
+
+        header {
+            width: 100%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .logo-port {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-headings, .dropbtn {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropbtn::after {
+            content: " ▼";
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            text-align: left;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .head {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .head:hover {
+            transform: scale(1.05);
+        }
+
+        .head h1 {
+            font-size: 3rem;
+            color: #0c0c0c;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-bottom: 40px;
+        }
+
+        .certificate-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .certificate-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .certificate-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-box:hover img {
+            transform: scale(1.1);
+        }
+
+        .certificate-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #ffba08;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            transition: color 0.3s ease;
+        }
+
+        .certificate-box:hover .certificate-title {
+            color: #ffdd57;
+        }
+    </style>
+</head>
+<body>
+    <div class="containers">
+        <header>
+            <nav>
+                <a href="index.html" class="logo-port">Portfolio</a>
+                <div class="navlinks">
+                    <a href="index.html" class="nav-headings">Home</a>
+                    <a href="skill.html" class="nav-headings">About</a>
+                    <a href="certi.html" class="nav-headings">My Certificates</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Contact</button>
+                        <div class="dropdown-content">
+                            <a href="https://github.com/vishnuvardhan118">Github</a>
+                            <a href="https://www.linkedin.com/in/vishnu-vardhan-693148290/">LinkedIn</a>
+                            <a href="mailto:vishnu118k@gmail.com">Gmail</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="head">
+            <h1>Certificates</h1>
+        </div>
+
+        <div class="container">
+            <div class="certificate-box">
+                <img src="python.jpeg" alt="Python Certificate">
+                <div class="certificate-title">Python Development</div>
+            </div>
+            <div class="certificate-box">
+                <img src="web.jpeg" alt="Web Development Certificate">
+                <div class="certificate-title">Web Development</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
