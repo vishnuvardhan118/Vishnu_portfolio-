@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <style>
@@ -11,31 +12,13 @@
       box-sizing: border-box;
       font-family: sans-serif;
     }
-    html, body {
-  overflow-x: hidden;
-}
-.content-container {
-  gap: 50px;
-}
-@media (max-width: 768px) {
-  .content-container {
-    gap: 30px;
-    flex-direction: column;
-  }
-}
-@media (max-width: 768px) {
-  .new-image {
-    transform: none;
-    margin-bottom: 20px;
-  }
-}
-
 
     html, body {
       width: 100%;
       min-height: 100vh;
       background: url('main.jpeg') no-repeat center center/cover;
       color: white;
+      overflow-x: hidden;
     }
 
     .containers {
@@ -56,6 +39,7 @@
       align-items: center;
       padding: 20px 50px;
       background-color: rgba(0, 0, 0, 0.5);
+      flex-wrap: wrap;
     }
 
     .logo-port {
@@ -67,6 +51,7 @@
 
     .navlinks {
       display: flex;
+      flex-wrap: wrap;
       gap: 30px;
     }
 
@@ -111,14 +96,13 @@
     }
 
     .content-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 100px 20px 50px; /* Increased top padding to push content down */
-  gap: 300px;
-}
-
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 100px 20px 50px;
+      gap: 50px;
+    }
 
     .content {
       max-width: 600px;
@@ -136,31 +120,19 @@
     }
 
     .new-image {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transform: translateX(-100px); /* move image left toward text */
-}
-
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transform: translateX(-100px);
+    }
 
     .new-image img {
       width: 100%;
       height: 100%;
-      object-fit:cover;
+      object-fit: cover;
     }
-    
-    @media (max-width: 768px) {
-  .content {
-    order: 2;
-  }
-  .new-image {
-    order: 1;
-  }
-}
-
-
 
     .cvbtn {
       text-align: center;
@@ -187,35 +159,68 @@
       color: #e0e0e0;
       text-decoration: none;
     }
+
     .typing-container {
-  width: fit-content;
-  margin-left: 10px;  /* Moves it 40px from the left side */
-  margin-top: 20px;   /* Keeps top margin */
-  font-family: 'Poppins', sans-serif;
-}
+      width: fit-content;
+      margin-left: 10px;
+      margin-top: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
 
-.typing-text {
-  font-size: 2.5rem;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 1px solid #3498db;
-  width: 0;
-  animation: typing 1.8s steps(20) forwards, blink 0.7s step-end infinite;
-}
+    .typing-text {
+      font-size: 2.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 1px solid #3498db;
+      width: 0;
+      animation: typing 1.8s steps(20) forwards, blink 0.7s step-end infinite;
+    }
 
-.cursor {
-  animation: blinkCursor 0.7s step-end infinite;
-}
+    .cursor {
+      animation: blinkCursor 0.7s step-end infinite;
+    }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 18ch; } /* Adjust character count to match your name */
-}
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 18ch; }
+    }
 
-@keyframes blinkCursor {
-  50% { border-color: transparent; }
-}
+    @keyframes blinkCursor {
+      50% { border-color: transparent; }
+    }
 
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .navlinks {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-headings, .dropbtn {
+        padding: 8px 12px;
+        font-size: 16px;
+      }
+
+      .content-container {
+        gap: 30px;
+        flex-direction: column;
+        padding: 80px 20px 30px;
+      }
+
+      .new-image {
+        transform: none;
+        margin-bottom: 20px;
+        order: 1;
+      }
+
+      .content {
+        order: 2;
+      }
+    }
   </style>
 </head>
 <body>
@@ -242,7 +247,7 @@
     <div class="content-container">
       <div class="content">
         <div class="typing-container">
-            <h1 class="typing-text">I'm Vishnu Vardhan<span class="cursor">.....</span></h1>
+          <h1 class="typing-text">I'm Vishnu Vardhan<span class="cursor">.....</span></h1>
         </div>
         <h3>
           As a passionate and dedicated student, I am constantly striving to expand my knowledge
